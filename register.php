@@ -50,6 +50,17 @@ if(isset($_POST['register_button'])) {
 		// Check if email is in valid format
 		if(filter_var($em, FILTER_VALIDATE_EMAIL)) {
 			$em = filter_var($em, FILTER_VALIDATE_EMAIL);
+
+			// Check if email already exists
+			$e_check = mysqli_query($con, "SELECT email FROM users WHERE email='{$em}'");
+
+			// Count the number of rows returned
+			$num_rows = mysqli_num_rows($e_check);
+
+			if($num_rows) {
+				echo "Email already in use!";
+			}
+
 		} else {
 			echo "Invalid format";
 		}
@@ -68,6 +79,7 @@ if(isset($_POST['register_button'])) {
 </head>
 <body>
 	<form action="register.php" method="POST">
+		<h1><?php echo $num_rows; ?></h1>
 		<input type="text" name="reg_fname" placeholder="First Name" required>
 		<input type="text" name="reg_lname" placeholder="Last Name" required>
 		<br>
