@@ -67,6 +67,25 @@ if(isset($_POST['register_button'])) {
 	} else {
 		echo "Emails don't match";
 	}
+
+	if(strlen($fname) > 25 || strlen($fname) < 2) {
+		echo "Your first name must be between 2 and 25 characters";
+	}
+	if(strlen($lname) > 25 || strlen($lname) < 2) {
+		echo "Your last name must be between 2 and 25 characters";
+	}
+	if($password != $password2) {
+		echo "Your passwords do not match!";
+	} else {
+		if(preg_match('/[^A-Za-z0-9]/', $password)) {
+			echo "Your password can only contain english characters or numbers";
+		}
+	}
+
+	if(strlen($password > 30 || strlen($password) < 5)) {
+		echo "Your password must be between 5 and 30 characters";
+	}
+
 }
 
 ?>
@@ -79,8 +98,8 @@ if(isset($_POST['register_button'])) {
 </head>
 <body>
 	<form action="register.php" method="POST">
-		<h1><?php echo $num_rows; ?></h1>
 		<input type="text" name="reg_fname" placeholder="First Name" required>
+		<br>
 		<input type="text" name="reg_lname" placeholder="Last Name" required>
 		<br>
 		<input type="email" name="reg_email" placeholder="Email" required>
@@ -95,3 +114,4 @@ if(isset($_POST['register_button'])) {
 	</form>
 </body>
 </html>
+
