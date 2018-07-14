@@ -122,7 +122,6 @@ if(isset($_POST['register_button'])) {
 	<title>Welcome To Swirlfeed</title>
 </head>
 <body>
-	<h1><?php if(empty($error_array)) echo $password; ?></h1>
 	<form action="register.php" method="POST">
 		<input type="text" name="reg_fname" placeholder="First Name" value="<?php if(isset($_SESSION['reg_fname'])) echo $_SESSION['reg_fname'];  ?>" required>
 		<br>
