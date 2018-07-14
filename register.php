@@ -16,6 +16,7 @@ $password = "";
 $password2 = "";
 $date = "";
 $error_array = [];
+$msg = [];
 
 if(isset($_POST['register_button'])) {
 	// Registration form values
@@ -124,6 +125,14 @@ if(isset($_POST['register_button'])) {
 		$query .= "	num_likes,user_closed,friend_array) ";
 		$query .= "VALUES ('$fname', '$lname', '$username', '$em', '$password', '$date', '$profile_pic', '0', '0', 'no', ',')";
 		mysqli_query($con, $query);
+
+		array_push($msg, "<span style='color: #14C800'>You're all set! Goahead and login!</span><br>");
+
+		// Clear session variables
+		$_SESSION['reg_fname'] = '';
+		$_SESSION['reg_lname'] = '';
+		$_SESSION['reg_email'] = '';
+		$_SESSION['reg_email2'] = '';
 	}
 
 }
@@ -164,6 +173,8 @@ if(isset($_POST['register_button'])) {
 		<?php if(in_array("Your password must be between 5 and 30 characters<br>", $error_array)) { echo "Your password must be between 5 and 30 characters<br>"; } ?>
 
 		<input type="submit" name="register_button" value="Register">
+		<?php if(in_array("<span style='color: #14C800'>You're all set! Goahead and login!</span><br>", $msg)) { echo "<span style='color: #14C800'>You're all set! Goahead and login!</span><br>"; } ?>
+		
 	</form>
 </body>
 </html>
