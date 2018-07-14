@@ -95,6 +95,22 @@ if(isset($_POST['register_button'])) {
 		array_push($error_array, "Your password must be between 5 and 30 characters<br>");
 	}
 
+	if(empty($error_array)) {
+		$password = password_hash($password, PASSWORD_BCRYPT, array('cost' => 10)); // Encrypt password
+
+		// Generate username by concatenating first name and last name
+		$username = strtolower($fname . "_" . $lname);
+		$check_username_query = mysqli_query($con, "SELECT username FROM users WHERE username='$username'");
+
+		$i=0;
+		while(mysqli_num_rows($check_username_query) != 0) {
+			$i++;
+			$username = $username . "_" . $i;
+			$check_username_query = mysqli_query($con, "SELECT username FROM users WHERE username='$username'");
+
+		}
+	}
+
 }
 
 ?>
@@ -106,6 +122,7 @@ if(isset($_POST['register_button'])) {
 	<title>Welcome To Swirlfeed</title>
 </head>
 <body>
+	<h1><?php if(empty($error_array)) echo $password; ?></h1>
 	<form action="register.php" method="POST">
 		<input type="text" name="reg_fname" placeholder="First Name" value="<?php if(isset($_SESSION['reg_fname'])) echo $_SESSION['reg_fname'];  ?>" required>
 		<br>
