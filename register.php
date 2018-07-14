@@ -109,6 +109,21 @@ if(isset($_POST['register_button'])) {
 			$check_username_query = mysqli_query($con, "SELECT username FROM users WHERE username='$username'");
 
 		}
+
+		// Profile picture assignment
+		$rand = rand(1,2); // Rnadom number between 1 and 2
+
+		if($rand == 1) {
+			$profile_pic = "assets/images/profile_pics/defaults/head_deep_blue.png";
+		} else if($rand == 2) {
+			$profile_pic = "assets/images/profile_pics/defaults/head_emerald.png";
+		}
+
+		$query = "INSERT INTO users ";
+		$query .= "(first_name, last_name, username, email,password, signup_date, profile_pic, num_posts,";
+		$query .= "	num_likes,user_closed,friend_array) ";
+		$query .= "VALUES ('$fname', '$lname', '$username', '$em', '$password', '$date', '$profile_pic', '0', '0', 'no', ',')";
+		mysqli_query($con, $query);
 	}
 
 }
