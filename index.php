@@ -1,14 +1,4 @@
-<?php  
-
-$con = mysqli_connect("localhost", "root", "root", "swirlfeed");
-
-if($con) {
-	echo "Connected!";
-} else if(mysqli_connect_errno()) {
-	echo "Failed to connect: " . mysqli_connect_errno();
-}
-
-?>
+<?php require('config/config.php'); ?>
 
 <!DOCTYPE html>
 <html lang="en">
