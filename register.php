@@ -1,5 +1,5 @@
 <?php require('config/config.php'); ?>
-<?php require('includes/form_handlers/register_handlers.php'); ?>
+<?php require('includes/form_handlers/register_handler.php'); ?>
 
 
 <!DOCTYPE html>
@@ -9,6 +9,13 @@
 	<title>Welcome To Swirlfeed</title>
 </head>
 <body>
+	<form action="register.php" method="POST">
+		<input type="email" name="log_email" placeholder="Email Address">
+		<br>
+		<input type="password" name="log_password" placeholder="Password">
+		<br>
+		<input type="submit" name="login_button" value="Login">
+	</form>
 	<form action="register.php" method="POST">
 		<input type="text" name="reg_fname" placeholder="First Name" value="<?php if(isset($_SESSION['reg_fname'])) echo $_SESSION['reg_fname'];  ?>" required>
 		<br>
