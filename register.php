@@ -1,4 +1,5 @@
 <?php require('config/config.php'); ?>
+<?php require('includes/form_handlers/login_handler.php'); ?>
 <?php require('includes/form_handlers/register_handler.php'); ?>
 
 
