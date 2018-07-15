@@ -16,6 +16,11 @@ if(isset($_POST['login_button'])) {
 
 		if(password_verify($password, $db_user_password)) {
 
+			$user_closed_query = mysqli_query($con, "SELECT * FROM users WHERE email='$email' and user_closed='yes'");
+			if(mysqli_num_rows($user_closed_query)) {
+				$reopen_account = mysqli_query($con, "UPDATE users SET user_closed='no' WHERE email='$email'");
+			}
+
 			$_SESSION['username'] = $username;
 			header("Location: index.php");
 			exit();
