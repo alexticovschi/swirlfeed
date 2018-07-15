@@ -7,6 +7,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Welcome To Swirlfeed</title>
+	<link rel="stylesheet" href="assets/css/register_style.css">
 </head>
 <body>
 	<form action="register.php" method="POST">
