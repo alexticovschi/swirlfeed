@@ -21,6 +21,7 @@ if(isset($_SESSION['username'])) {
 	<!-- BootstrapJS -->
 	<script src="assets/js/bootstrap.js"></script>
 	<!-- BootstrapCSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
 	<link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -30,4 +31,13 @@ if(isset($_SESSION['username'])) {
 		<div class="logo">
 			<a href="index.php">Swirlfeed</a>
 		</div>
+
+		<nav>
+			<a href=""><i class="fa fa-home fa-lg"></i></a>
+			<a href=""><i class="fa fa-envelope fa-lg"></i></a>
+			<a href=""><i class="fa fa-bell-o fa-lg"></i></a>
+			<a href=""><i class="fa fa-users fa-lg"></i></a>
+			<a href=""><i class="fa fa-cog fa-lg"></i></a>
+
+		</nav>
 	</div>
