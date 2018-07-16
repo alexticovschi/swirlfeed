@@ -7,6 +7,11 @@ form {
 	margin: auto;
 }
 
+a {
+	text-decoration: none;
+	color: #3498db;
+}
+
 .login_box {
 	position: relative;
 	margin: 0 auto;
@@ -16,6 +21,7 @@ form {
 	background-color: #fff;
 	border-radius: 6px;
 	padding: 4px;
+	padding-bottom: 20px;
 }
 
 .login_header {
@@ -60,6 +66,10 @@ input[type="text"], input[type="email"], input[type="password"] {
 
 input[type="text"]:hover, input[type="email"]:hover, input[type="password"]:hover {
 	border-color: #3498db;
+}
+
+.second {
+	display: none;
 }
 
 @media (max-width: 765px) {
