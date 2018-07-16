@@ -22,5 +22,12 @@ if(isset($_SESSION['username'])) {
 	<script src="assets/js/bootstrap.js"></script>
 	<!-- BootstrapCSS -->
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+
+	<div class="top_bar">
+		<div class="logo">
+			<a href="index.php">Swirlfeed</a>
+		</div>
+	</div>
