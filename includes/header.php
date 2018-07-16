@@ -15,5 +15,12 @@ if(isset($_SESSION['username'])) {
 <head>
 	<meta charset="UTF-8">
 	<title>Welcome To Swirlfeed</title>
+	<!-- PopperJS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	
+	<!-- BootstrapJS -->
+	<script src="assets/js/bootstrap.js"></script>
+	<!-- BootstrapCSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
 </head>
 <body>
