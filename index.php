@@ -1,6 +1,12 @@
 <?php include('includes/header.php'); ?>
 <?php //session_destroy(); ?>
 
-	<h1><?php if(isset($_SESSION['username'])) echo 'Hello ' . $_SESSION['username'] . '!'; ?></h1>
+		<div class="user_details column">
+			<a href="#">
+				<img src="<?php echo $user['profile_pic']; ?>" alt="profile pic" />
+			</a>
+		</div>
+
+	</div>
 </body>
 </html>
