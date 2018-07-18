@@ -35,7 +35,7 @@ if(isset($_SESSION['username'])) {
 		</div>
 
 		<nav>
-			<a href="#"><?php echo $user['first_name']; ?></a>
+			<a href="<?php echo $userLoggedIn; ?>"><?php echo $user['first_name']; ?></a>
 			<a href="#"><i class="fa fa-home fa-lg"></i></a>
 			<a href="#"><i class="fa fa-envelope fa-lg"></i></a>
 			<a href="#"><i class="fa fa-bell-o fa-lg"></i></a>
