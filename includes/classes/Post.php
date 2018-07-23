@@ -63,7 +63,11 @@ class Post {
 				$user_to = "<a href='" . $row['user_to'] . "'>" . $user_to_name . "</a>";
 			}
 
-		}
+			// Check if user who posted, has their account closed
+			$added_by_obj = new User($con, $added_by);
+			if($added_by_obj->isClosed()) {
+				continue;
+			}		
 	}
 }
 
