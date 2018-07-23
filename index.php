@@ -1,5 +1,16 @@
 <?php include('includes/header.php'); ?>
 <?php include('includes/classes/User.php'); ?>
+<?php include('includes/classes/Post.php'); ?>
+
+<?php  
+
+if(isset($_POST['post'])) {
+	$post = new Post($con, $userLoggedIn);
+	$post->submitPost($_POST['post_text'], 'none');
+}
+
+?>
+
 
 <?php //session_destroy(); ?>
 
@@ -26,14 +37,16 @@
 				<input type="submit" name="post" id="post_buttom" value="Post">
 				<hr>
 			</form>
+
+			<?php 
+
+			$user_obj = new User($con, $userLoggedIn);
+			echo $user_obj->getFirstAndLastName();
+
+			?>
 		</div>
 
-		<?php 
 
-		$user_obj = new User($con, $userLoggedIn);
-		echo $user_obj->getFirstAndLastName();
-
-		?>
 
 	</div>
 </body>
