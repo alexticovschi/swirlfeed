@@ -1,4 +1,6 @@
 <?php include('includes/header.php'); ?>
+<?php include('includes/classes/User.php'); ?>
+
 <?php //session_destroy(); ?>
 
 		<div class="user_details column">
@@ -25,6 +27,13 @@
 				<hr>
 			</form>
 		</div>
+
+		<?php 
+
+		$user_obj = new User($con, $userLoggedIn);
+		echo $user_obj->getFirstAndLastName();
+
+		?>
 
 	</div>
 </body>
