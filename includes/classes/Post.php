@@ -67,7 +67,12 @@ class Post {
 			$added_by_obj = new User($con, $added_by);
 			if($added_by_obj->isClosed()) {
 				continue;
-			}		
+			}	
+
+			$query = "SELECT first_name, last_name, profile_pic FROM users WHERE username='$added_by'";
+			$user_details = mysqli_query($this->con, $query);
+			$user_row = mysqli_fetch_assoc($user_details);
+		}
 	}
 }
 
